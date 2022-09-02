@@ -31,11 +31,16 @@ while not sair:
         print('Seu Pokemon adversario', duelista2, 'possui',ataque2, 'de ataque e',defesa2, 'de defesa.')
         print('Iniciando Batalha Pokemon')
         print('.')
-        time.sleep(5)
+        time.sleep(3)
         print('..')
         time.sleep(5)
         print('...')
         if ataque1 > defesa2:
-            print('O', duelista1,'venceu está batalha.')
+            resultado = 'O '+ duelista1+' venceu está batalha.\n'
+            print(resultado)
         else:
-            print('O', duelista2,'venceu está batalha.')
+            resultado = 'O '+duelista2+' venceu está batalha.\n'
+            print(resultado)
+
+        with open('resultados_batalhas_pokemon.txt','a') as arquivo:
+            arquivo.write(resultado)
